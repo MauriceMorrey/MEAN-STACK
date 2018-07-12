@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<br><br>
+<div style="text-align: center;">
+	<h2>Mine ShintoCoin</h2>
+	<p>Answer the question correctly for a ShintoCoin!</p>
+	<form class="form-control">
+		<p style="text-shadow: 0 0 2px black;" >What is {{index+1}}th decimal number of pi?</p>
+		<input type="number" name="guess" max="1" [(ngModel)]="guess">
+		<button style="margin-left: 10px;" class="btn btn-warning btn-sm" type="button" (click)="checkAnswer()">Guess</button>
+	</form>
+	<p *ngIf="correct==1">Correct! You get 1 Shinto Coin. ShintoCoin balance: {{balance}}</p>
+	<p *ngIf="correct==2">ERR WRONG </p>
+
+</div>

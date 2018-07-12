@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit a dog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+                <h3>
+                    <%= x %>
+                </h3>
+                <% } %>
+                    <% } %>
+                        <i>
+                            <u>
+                                <h3>Current dog info is as below:</h3>
+                            </u>
+                        </i>
+                        <% if (dog) { %>
+                            <h4>Dog Name:
+                                <a href="/showDog/<%= dog._id %>">
+                                    <%= dog.dog_name %>
+                                </a>
+                            </h4>
+                            <h4>Dog Breed:
+                                <%= dog.dog_breed %>
+                            </h4>
+                            <h4>Age:
+                                <%= dog.age %>
+                            </h4>
+                            <h4>Speed:
+                                <%= dog.speed %> mph
+                            </h4>
+                            <hr>
+
+                            <form class="form-contol" action="/editDog/<%= dog._id %>" method="POST">
+                                Dog Name:
+                                <div class="form-contol">
+                                    <input type="text" name="dog_name" id="dog_name">
+                                </div>
+                                <br> Dog Breed:
+                                <div class="form-contol">
+                                    <input type="text" name="dog_breed" id="dog_breed">
+                                </div>
+                                <br> Age:
+                                <div class="form-contol">
+                                    <input type="number" name="age" id="age">
+                                </div>
+                                <br> Speed:
+                                <div class="form-contol">
+                                    <input type="text" name="speed" id="speed">
+                                </div>
+                                <br>
+                                <button class="btn btn-primary">Add Dog</button>
+                                <br>
+                                <br>
+                            </form>
+                            <% } %>
+                                <a href="/" class="btn btn-primary btn-sm"> Home </a>
+
+    </div>
+</body>
+
+</html>

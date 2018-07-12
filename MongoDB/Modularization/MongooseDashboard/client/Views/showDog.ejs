@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Display Specific Dog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+
+        <h2> Fastest dog breeds in the world! </h2>
+        <br>
+        <div id="specific_dog" class="form-contol">
+            <u>
+                <i>
+                    <h3>Here's one of the dogs:</h3>
+                </i>
+            </u>
+            <% if (dog) { %>
+                <h4>Dog Name:
+                    
+                        <%= dog.dog_name %>
+        
+                </h4>
+                <h4>Dog Breed:
+                    <%= dog.dog_breed %>
+                </h4>
+                <h4>Age:
+                    <%= dog.age %>
+                </h4>
+                <h4>Speed:
+                    <%= dog.speed %> mph
+                </h4>
+                    <a style="margin-right: 50px;" class="btn btn-primary btn-sm" href="/editDog/<%= dog._id %>">Edit</a>
+                <hr>
+                <% } %>
+        </div>
+        <a href="/" class="btn btn-primary btn-sm"> Home </a>
+    </div>
+</body>
+
+</html>

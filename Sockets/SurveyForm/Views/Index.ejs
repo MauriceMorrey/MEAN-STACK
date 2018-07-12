@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <div style="background-color: rgb(50, 206, 154);" id="output"></div>
+        <div style="background-color: rgb(50, 206, 154);" id="LuckyNumber"></div>
+        <!-- <form > -->
+        <div  class="form-control">
+            Your Name:
+            <input id="name" type="text">
+        </div>
+        <br>
+        <div  class="form-control">
+            Dojo Location:
+            <select id="location" name="myLocation">
+                <option value="chicago">Chicago</option>
+                <option value="san fransisco">San Fransisco</option>
+                <option value="seattle">Seattle</option>
+                <option value="new York">New York</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-control">
+            Favorite Language:
+            <select  id="language" name="language">
+                <option value="python">Python</option>
+                <option value="mean">Mean</option>
+                <option value="c#">C#</option>
+                <option value="php">PHP</option>
+            </select>
+        </div>
+        <br>
+        <p>Comment(optional):</p>
+        <div  class="form-control">
+            <textarea class="form-control" id="commentarea" name="comment" rows="10" cols="50" maxlength="500" placeholder="500 char max"></textarea>
+        </div>
+        <div  class="form-control">
+            <!-- <input id="Submit" class="btn btn-primary" type='submit' value='Submit'> -->
+            <button class="btn btn-primary" id="Submit"> Submit </button>
+        </div>
+        <!-- </form> -->
+    </div>
+    <hr>
+
+</body>
+<script src="/Survey.js"></script>
+
+</html>

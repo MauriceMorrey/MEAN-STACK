@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <h1 style="text-align: center;" > Counter </h1>
+    <h4 style="text-align: center;">
+        <%= session.count %> : Times
+    </h4>
+    <form style="text-align: center;" action="/doubleTrouble" method="get">
+        <input class="btn btn-success" type="submit" value="Double your Count">
+    </form>
+    <form style="text-align: center; margin-top: 5px;" action="/reset" method="get">
+        <input class="btn btn-primary" type="submit" value="Reset">
+    </form>
+    <hr>
+
+</body>
+
+</html>

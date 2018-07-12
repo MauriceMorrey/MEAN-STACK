@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+
+<div style="text-align: center;"> 
+      <h3>Edit product</h3>
+      <form class="form-control" (submit)= "editProduct()" >
+        <!-- {{price | json}} {{title | json }} -->
+        <!-- name="editForm" #editForm="ngForm" (submit)="editProduct()" -->
+        Title: <input 
+        type="text" 
+        name="title" 
+        [(ngModel)]="product.title" 
+        [value]="product.title"  
+        required
+        minlength="3"
+        #title="ngModel">
+        <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger">
+          <div [hidden]="!title.errors.required">
+            Product title is required!
+          </div>
+          <div [hidden]="!title.errors.minlength">
+            Title must be at least 3 characters long.
+          </div>
+        </div>
+
+        Price: $<input 
+        type="number" 
+        name="price" 
+        [(ngModel)]="product.price" 
+        [value]="product.price" 
+        required
+        #price="ngModel">
+        <div *ngIf="price.errors && (price.dirty || price.touched)" class="alert alert-danger">
+          <div [hidden]="!price.errors.required">
+            Product price is required!
+          </div>
+        </div>
+
+        Image URL: <input 
+        type="text" 
+        name="image_url" 
+        [(ngModel)]="product.image_url" 
+        [value]="product.image_url" 
+        required
+        #image_url="ngModel">
+        <div *ngIf="image_url.errors && (image_url.dirty || image_url.touched)" class="alert alert-danger">
+          <div [hidden]="!image_url.errors.required">
+            Product image_url is required!
+          </div>
+        </div>
+        <div class="btn-group">
+          <input type="submit"  style="margin-left: 15px;" class="btn-sm btn-primary" value="Update">
+          <button type="button" [routerLink]="['/product']" (click)="deleteProductFromService(product._id)" style="margin-left: 15px;" class="btn-sm btn-danger" >Delete</button>
+        </div>
+      </form>
+  </div>

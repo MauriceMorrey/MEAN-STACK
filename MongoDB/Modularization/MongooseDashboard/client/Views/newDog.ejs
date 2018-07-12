@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a dog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+                <h3>
+                    <%= x %>
+                </h3>
+                <% } %>
+                    <% } %>
+                    <i> <u> <h3>Add a dog breed you think deserves to be on the fast lane!</h3> </u> </i>
+                        <form class="form-contol" action="/newDog" method="POST">
+                            Dog Name:
+                            <div class="form-contol">
+                                <input type="text" name="dog_name" id="dog_name">
+                            </div>
+                            <br> Dog Breed:
+                            <div class="form-contol">
+                                <input type="text" name="dog_breed" id="dog_breed">
+                            </div>
+                            <br> Age:
+                            <div class="form-contol">
+                                <input type="number" name="age" id="age">
+                            </div>
+                            <br> Speed:
+                            <div class="form-contol">
+                                <input type="text" name="speed" id="speed">
+                            </div>
+                            <br>
+                            <button class="btn btn-primary">Add Dog</button>
+                            <br>
+                            <br>
+                        </form>
+                        <a href="/" class="btn btn-primary btn-sm"> Home </a>
+
+    </div>
+</body>
+
+</html>

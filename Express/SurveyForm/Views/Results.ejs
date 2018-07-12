@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">        
+</head>
+<body>
+    <hr>
+    <div style="text-align: center;" id="header">
+            <h5>Thanks for submitting this form! You have submitted this form <%=session.count%> time(s) now.</h5>    
+        </div>
+        <div style="text-align: center;" id="submitted_info">
+            <h2>Submitted Information</h2>
+            <h5>Name: <%=session.name%></h5>
+            <h5>Dojo Location: <%=session.location%></h5>
+            <h5>Favorite Language: <%=session.language%>!!</h5>
+            <h5>Comment: <%=session.comment%></h5>
+            <br>
+            <form action="/" method="get">
+                <input class="btn btn-primary" type="submit" value="Go Back">
+            </form>
+            <form style="margin-top: 5px;" action='/reset' method='get'>
+                <input type='hidden' name='count'> 
+                <input class="btn btn-danger" type='submit' value='Reset'>
+            </form>
+        </div>
+    <hr>     
+</body>
+</html>

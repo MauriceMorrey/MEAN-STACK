@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<div style="text-align: center;">
+      <h3>Add new product</h3>
+      <form  class="form-control" name="productForm" #productForm="ngForm" (submit)="onSubmit(productForm)">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          Title: <input 
+          type="text" 
+          name="title" 
+          [(ngModel)]="newProduct.title"
+          required
+          minlength="3"
+          #title="ngModel">
+          <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger">
+            <div [hidden]="!title.errors.required">
+              Product title is required!
+            </div>
+            <div [hidden]="!title.errors.minlength">
+              Title must be at least 3 characters long.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          Price: $<input 
+          type="number" 
+          name="price" 
+          [(ngModel)]="newProduct.price"
+          required
+          #price="ngModel">
+          <div *ngIf="price.errors && (price.dirty || price.touched)" class="alert alert-danger">
+            <div [hidden]="!price.errors.required">
+              Product price is required!
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          Image URL: <input 
+          type="text" 
+          name="image_url" 
+          [(ngModel)]="newProduct.image_url"
+          required
+          #image_url="ngModel">
+          <div *ngIf="image_url.errors && (image_url.dirty || image_url.touched)" class="alert alert-danger">
+            <div [hidden]="!image_url.errors.required">
+              Product image_url is required!
+            </div>
+            <!-- <div [hidden]="!image_url.errors.pattern">
+                pattern="https?://." //use this above for url validations if neccessary
+              Must be a valid URL!
+            </div> -->
+          </div>
+        </div>
+        <!-- {{ title.errors | json }}
+        {{ title.valid | json }}
+        {{ price.errors | json }}
+        {{ price.valid | json }}
+        {{ image_url.errors | json }}
+        {{ image_url.valid | json }} -->
+        <!-- <div *ngIf="!title.valid">Title does not meet min requirements.</div> -->
+        <!-- <div *ngIf="!price.valid">Price does not meet min requirements.</div>
+        <div *ngIf="!image_url.valid">Image Url does not meet min requirements.</div> -->
+        <button type="submit" style="margin-left: 15px;" class="btn-sm btn-primary" >Create</button>
+        <button type="submit" [routerLink]="['/product']" style="margin-left: 15px;" class="btn-sm btn-danger" >Cancel</button>
+        </form>
+  </div>

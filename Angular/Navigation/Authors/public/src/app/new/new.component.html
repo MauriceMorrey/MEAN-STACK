@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<br><br>
+
+<div style="text-align: center;">
+  <a [routerLink]="['/']">Home</a>
+  <h6>Add a new author</h6>
+</div>
+<br>
+<form (submit)="onSubmit(name)" class="form-control" style="text-align: center;"  >
+  {{newAuthor | json}}
+  Name: <input 
+  type="text" 
+  [(ngModel)] = "newAuthor.name" 
+  name="name" 
+  required
+  minlength="4"
+  #name="ngModel">
+  {{ name.errors | json }}
+  {{ name.valid | json }}
+  <div *ngIf="!name.valid">Name does not meet min requirements.</div>
+  <div class="btn-group" style="text-align: center;">
+    <button class="btn btn-primary" style="margin-left: 25px;" [routerLink]="['/']" >Cancel </button>
+    <button class="btn btn-primary" style="margin-left: 25px;" >Submit  </button>
+  </div>
+</form>

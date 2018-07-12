@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<br>
+<br>
+
+<div style="text-align: center;">
+    <h2>Ledger Transaction Details</h2>
+    <br>
+    <h5>Detailed view of a transaction from the ledger.</h5>
+    <br>
+    <p>Transaction #: {{this.event.id}}</p>
+    <p>{{this.event.action +":"}}  {{this.event.amount}} ShintoCoin. Total balance after transaction: $ {{this.event.balance}}</p>
+
+</div>

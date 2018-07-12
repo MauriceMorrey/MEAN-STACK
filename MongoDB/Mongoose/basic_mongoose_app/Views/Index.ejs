@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Mongoose App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <!-- tip to easily see objects printed in full instead of [object Object] -->
+        <!-- <%- JSON.stringify(messages) %> -->
+            <!-- based on the structure of your messages, determine how to display them -->
+            <% if(messages.registration) { %>
+                <% for (var x of messages.registration) { %>
+                    <h3>
+                        <%= x %>
+                    </h3>
+                    <% } %>
+                        <% } %>
+                            <h2> Basic Mongoose App; working with MongoDB </h2>
+                            <br>
+                            <div id="all_users" class="form-contol float-right">
+                                <u>
+                                    <i>
+                                        <h3>Here are all the users:</h3>
+                                    </i>
+                                </u>
+                                <% for (var x in users) { %>
+                                    <h4>First Name:
+                                        <%= users[x].first_name %>
+                                    </h4>
+                                    <h4>Last Name:
+                                        <%= users[x].last_name %>
+                                    </h4>
+                                    <h4>Age:
+                                        <%= users[x].age %>
+                                    </h4>
+                                    <h4>Email:
+                                        <%= users[x].email %>
+                                    </h4>
+
+                                    <hr>
+                                    <% } %>
+                            </div>
+                            <form class="form-contol" action="/users" method="POST">
+                                First Name:
+                                <div class="form-contol">
+                                    <input type="text" name="first_name" id="first_name">
+                                </div>
+                                <br> Last Name:
+                                <div class="form-contol">
+                                    <input type="text" name="last_name" id="last_name">
+                                </div>
+                                <br> Age:
+                                <div class="form-contol">
+                                    <input type="number" name="age" id="age">
+                                </div>
+                                <br> Email:
+                                <div class="form-contol">
+                                    <input type="text" name="email" id="email">
+                                </div>
+                                <br>
+                                <button class="btn btn-primary">Create</button>
+                                <br><br>
+                            </form>
+                            <form action="/clear" method="POST">
+
+                                <button class="btn btn-danger" >Clear</button> 
+                            </form>
+                                                          
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<br><br>
+
+<div style="text-align: center;">
+  <a [routerLink]="['/']" class="btn-sm btn-primary" >Home</a>
+  
+  <h6 >Edit this author</h6>
+</div>
+<br>
+<form (submit)="editAuthor()" class="form-control" style="text-align: center;" action="" *ngIf="authorToEdit">
+  Name: <input type="text" name="authorToEdit.name" [(ngModel)]="authorToEdit.name" [value]="authorToEdit.name">
+  <div class="btn-group" style="text-align: center;">
+    <button type="button" class="btn btn-primary" style="margin-left: 25px;" [routerLink]="['/']">Cancel</button>
+    <button type="button" class="btn btn-primary" style="margin-left: 25px;">Submit </button>
+  </div>
+</form>

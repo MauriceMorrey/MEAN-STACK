@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quoting Dojo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+                <h3>
+                    <%= x %>
+                </h3>
+                <% } %>
+                    <% } %>
+
+                        <h2> Welcome to Quoting Dojo! </h2>
+                        <br>
+
+                        <form class="form-contol" action="/quotes" method="POST">
+                            Your Name:
+                            <div class="form-contol">
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <br> Your Quote:
+                            <div class="form-contol">
+                                <input type="text" name="myQuote" id="quote">
+                            </div>
+                            <br>
+                            <div class="btn-toolbar">
+                                <button style="margin-right: 50px;" id="addQuote" class="btn btn-success btn-sm"> Add my Quote! </button>
+                                <!-- <button id="showQuotes" class="btn btn-primary btn-sm"> Skip to Quotes! </button> -->
+                            </div>
+                            <br>
+                            <br>
+                        </form>
+                        <form action="/quotes" method="GET">
+                            <button id="showQuotes" class="btn btn-primary btn-sm"> Skip to Quotes! </button>
+                        </form>
+                        
+    </div>
+</body>
+</html>

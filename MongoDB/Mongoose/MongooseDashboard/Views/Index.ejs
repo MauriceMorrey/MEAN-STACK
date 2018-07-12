@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+
+        <h2> Fastest dog breeds in the world! </h2>
+        <br>
+        <div id="all_dogs" class="form-contol">
+            <u>
+                <i>
+                    <h3>Here are all the dogs:</h3>
+                </i>
+            </u>
+            <% for (var x in dogs) { %>
+                <h4>Dog Name:
+                    <a href="/showDog/<%= dogs[x]._id %>">
+                        <%= dogs[x].dog_name %>
+                    </a>
+                </h4>
+                <h4>Dog Breed:
+                    <%= dogs[x].dog_breed %>
+                </h4>
+                <h4>Age:
+                    <%= dogs[x].age %>
+                </h4>
+                <h4>Speed:
+                    <%= dogs[x].speed %> mph
+                </h4>
+                <div class="btn-toolbar">
+                    <a style="margin-right: 50px;" class="btn btn-primary btn-sm" href="/editDog/<%= dogs[x]._id %>">Edit</a>
+                    <form action="/deleteDog/<%= dogs[x]._id %>" method="POST">
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+                <hr>
+                <% } %>
+        </div>
+        <br>
+        <a href="/newDog" class="btn btn-success btn-sm">Add a dog</a>
+    </div>
+</body>
+
+</html>

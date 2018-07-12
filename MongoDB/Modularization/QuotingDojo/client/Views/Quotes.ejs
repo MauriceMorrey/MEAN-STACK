@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qouting Dojo Quotes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <h2> Welcome to the quotes page! </h2>
+    <div id="all_quotes" class="form-contol">
+        <u>
+            <i>
+                <h3>Here are all the awesome quotes!</h3>
+            </i>
+        </u>
+        <!-- <% if (quotes){ %> -->
+        <% for (var x in quotes) { %>
+            <h4>Name:
+                <%= quotes[x].name %>
+            </h4>
+            <h4>Quote:
+                <%= quotes[x].myQuote %>
+            </h4>
+            <h4>Created at:
+                <%= quotes[x].createdAt %>
+            </h4>
+            <hr>
+            <% } %>
+            <!-- <% } %> -->
+    </div>
+        <a href="/" id="home" class="btn btn-primary btn-sm"> Home </a>
+    
+    <hr>
+</body>
+
+</html>

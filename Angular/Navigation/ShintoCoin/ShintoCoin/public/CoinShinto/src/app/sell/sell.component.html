@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+
+
+<br><br>
+<div style="text-align: center;">
+	<h2>Sell ShintoCoin</h2>
+	
+	<p>Current ShintoCoin balance: ${{balance}}</p>
+	<form class="form-control" >
+		<input type="number" name="amount" [(ngModel)]="amount">
+		<button style="margin-left: 10px;" class="btn btn-success btn-sm" (click)="sellCoins()">Sell</button>
+	</form>
+	<p *ngIf="error">Insufficent balance!</p>
+</div>

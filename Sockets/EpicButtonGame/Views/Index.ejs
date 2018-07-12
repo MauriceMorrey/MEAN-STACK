@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <hr>
+    <div class="container">
+        <h1 style="text-align: center;"> Counter </h1>
+        <div id="pressing" class="text-center"></div>
+        <!-- <h4  style="text-align: center;">
+        This button has been pushed <%= count %> time(s).
+    </h4> -->
+        <form style="text-align: center;">
+            <input id="pushing" class="btn btn-primary" type="submit" value="Push the epic button">
+        </form>
+        <form style="text-align: center; margin-top: 5px;">
+            <input id="resetting" class="btn btn-danger" type="submit" value="Reset">
+        </form>
+    </div>
+    <hr>
+
+</body>
+<script src="/button.js"></script>
+
+
+</html>
